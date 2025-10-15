@@ -1,10 +1,6 @@
-# Astro Starter Kit: Basics
+# Care Software Labs Website
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+A clean, minimalistic website for Care Software Labs built with Astro.
 
 ## 🚀 Project Structure
 
@@ -13,20 +9,21 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│   └── favicon.ico
 ├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+│   ├── components
+│   │   ├── Footer.astro
+│   │   └── Navigation.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   ├── pages
+│   │   ├── about.astro
+│   │   ├── index.astro
+│   │   └── products.astro
+│   └── styles
+│       └── theme.css
 └── package.json
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 🧞 Commands
 
@@ -41,6 +38,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🌐 Care Software Labs
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Modular tech, meaningful care.**
+
+Visit us at: [Care Software Labs LinkedIn](https://www.linkedin.com/company/care-software-labs)
