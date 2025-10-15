@@ -1,0 +1,89 @@
+/* src/styles/theme.css */
+:root {
+  /* Primary (Black/White) */
+  --color-primary: black; /* #000000 */
+  --color-primary-hover: #333333; /* Slightly lighter black for hover */
+  --color-primary-active: #555555; /* Even lighter for active/clicked state */
+
+  /* Secondary (Grayscale) */
+  --color-secondary: #f5f5f5; /* Light gray for backgrounds */
+  --color-secondary-text: #616161; /* Dark gray for secondary text */
+
+  /* Accent (Optional: Use sparingly for emphasis) */
+  --color-accent: #999999; /* Medium gray for subtle accents */
+  --color-accent-hover: #777777; /* Darker gray for hover/focus */
+
+  /* Text */
+  --color-text-primary: black; /* #000000 */
+  --color-text-secondary: #616161; /* Dark gray for secondary text */
+
+  /* Backgrounds */
+  --color-bg-primary: white; /* #FFFFFF */
+  --color-bg-secondary: #f5f5f5; /* Light gray for cards/sections */
+  --color-bg-accent: #e0e0e0; /* Slightly darker gray for accent backgrounds */
+
+  /* Borders */
+  --color-border: #d9d9d9; /* Light gray for borders */
+}
+
+/* Example usage for common elements */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.button:active {
+  background-color: var(--color-primary-active);
+}
+
+/* Secondary button style (e.g., for less prominent actions) */
+.button--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-accent);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}

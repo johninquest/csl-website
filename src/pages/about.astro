@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us | Care Software Labs">
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">About Care Software Labs</h1>
+                <p class="hero__tagline">Building the future of care management</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="content__section">
+                    <h2 class="section__title">Our Story</h2>
+                    <p class="content__description">
+                        Care Software Labs is an early-stage technology lab based in Würzburg, Germany, 
+                        founded with a mission to transform how care and healthcare organizations manage 
+                        their operations. We believe that technology should empower caregivers, not burden them.
+                    </p>
+                    <p class="content__description">
+                        Our team combines deep healthcare industry knowledge with modern software engineering 
+                        practices to create solutions that truly understand the complexities of care delivery.
+                    </p>
+                </div>
+
+                <div class="content__section">
+                    <h2 class="section__title">Our Mission</h2>
+                    <p class="content__description">
+                        We're focused on lightening the administrative load so providers can focus on what 
+                        matters most: delivering exceptional care. Unlike rigid, outdated systems, our 
+                        platform helps teams organize, manage, and leverage care information efficiently.
+                    </p>
+                </div>
+
+                <div class="content__section">
+                    <h2 class="section__title">Our Approach</h2>
+                    <div class="approach__grid">
+                        <div class="approach__card">
+                            <h3 class="approach__title">Modular Design</h3>
+                            <p class="approach__text">
+                                Our architecture grows with your organization, allowing you to add 
+                                capabilities as needed without replacing your entire system.
+                            </p>
+                        </div>
+                        <div class="approach__card">
+                            <h3 class="approach__title">AI-Ready</h3>
+                            <p class="approach__text">
+                                Built from the ground up to seamlessly integrate future AI capabilities 
+                                that will further enhance care delivery.
+                            </p>
+                        </div>
+                        <div class="approach__card">
+                            <h3 class="approach__title">Human-Centered</h3>
+                            <p class="approach__text">
+                                Every feature is designed with the end user in mind, ensuring intuitive 
+                                workflows that complement existing care processes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <Footer />
+</Layout>
+
+<style>
+    /* Layout */
+    main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-bg-primary);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 8rem 0 4rem 0;
+        text-align: center;
+        background-color: var(--color-bg-primary);
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 300;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+        letter-spacing: -0.02em;
+    }
+
+    .hero__tagline {
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        color: var(--color-text-secondary);
+        font-weight: 400;
+        margin: 0;
+    }
+
+    /* Content Section */
+    .content {
+        padding: 4rem 0 6rem 0;
+        background-color: var(--color-bg-primary);
+    }
+
+    .content__section {
+        margin-bottom: 4rem;
+    }
+
+    .content__section:last-child {
+        margin-bottom: 0;
+    }
+
+    .section__title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 400;
+        color: var(--color-primary);
+        margin: 0 0 1.5rem 0;
+        text-align: center;
+    }
+
+    .content__description {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .content__description:last-of-type {
+        margin-bottom: 0;
+    }
+
+    /* Approach Grid */
+    .approach__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .approach__card {
+        background-color: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .approach__title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+    }
+
+    .approach__text {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero {
+            padding: 6rem 0 3rem 0;
+        }
+
+        .content {
+            padding: 3rem 0 4rem 0;
+        }
+
+        .content__section {
+            margin-bottom: 3rem;
+        }
+
+        .approach__grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .approach__card {
+            padding: 1.5rem;
+        }
+    }
+</style>
