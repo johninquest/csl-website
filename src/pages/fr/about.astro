@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('fr');
+---
+
+<Layout title={`${t('about.title')} | ${t('site.title')}`}>
+    <Navigation />
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">{t('about.title')}</h1>
+                <p class="hero__tagline">{t('about.tagline')}</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="content__section">
+                    <h2 class="section__title">{t('about.story.title')}</h2>
+                    <p class="content__description">
+                        {t('about.story.p1')}
+                    </p>
+                    <p class="content__description">
+                        {t('about.story.p2')}
+                    </p>
+                </div>
+
+                <div class="content__section">
+                    <h2 class="section__title">{t('about.mission.title')}</h2>
+                    <p class="content__description">
+                        {t('about.mission.description')}
+                    </p>
+                </div>
+
+                <div class="content__section">
+                    <h2 class="section__title">{t('about.approach.title')}</h2>
+                    <div class="approach__grid">
+                        <div class="approach__card">
+                            <h3 class="approach__title">{t('about.approach.modular.title')}</h3>
+                            <p class="approach__text">
+                                {t('about.approach.modular.description')}
+                            </p>
+                        </div>
+                        <div class="approach__card">
+                            <h3 class="approach__title">{t('about.approach.ai.title')}</h3>
+                            <p class="approach__text">
+                                {t('about.approach.ai.description')}
+                            </p>
+                        </div>
+                        <div class="approach__card">
+                            <h3 class="approach__title">{t('about.approach.human.title')}</h3>
+                            <p class="approach__text">
+                                {t('about.approach.human.description')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <Footer />
+</Layout>
+
+<style>
+    /* Layout */
+    main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-bg-primary);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 8rem 0 4rem 0;
+        text-align: center;
+        background-color: var(--color-bg-primary);
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 300;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+        letter-spacing: -0.02em;
+    }
+
+    .hero__tagline {
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        color: var(--color-text-secondary);
+        font-weight: 400;
+        margin: 0;
+    }
+
+    /* Content Section */
+    .content {
+        padding: 4rem 0 6rem 0;
+        background-color: var(--color-bg-primary);
+    }
+
+    .content__section {
+        margin-bottom: 4rem;
+    }
+
+    .content__section:last-child {
+        margin-bottom: 0;
+    }
+
+    .section__title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 400;
+        color: var(--color-primary);
+        margin: 0 0 1.5rem 0;
+        text-align: center;
+    }
+
+    .content__description {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .content__description:last-of-type {
+        margin-bottom: 0;
+    }
+
+    /* Approach Grid */
+    .approach__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .approach__card {
+        background-color: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .approach__title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+    }
+
+    .approach__text {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero {
+            padding: 6rem 0 3rem 0;
+        }
+
+        .content {
+            padding: 3rem 0 4rem 0;
+        }
+
+        .content__section {
+            margin-bottom: 3rem;
+        }
+
+        .approach__grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .approach__card {
+            padding: 1.5rem;
+        }
+    }
+</style>

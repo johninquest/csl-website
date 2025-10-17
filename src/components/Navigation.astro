@@ -1,29 +1,48 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/solutions', label: 'Solutions' }
+    { href: lang === 'en' ? '/' : `/${lang}`, label: t('nav.home') },
+    { href: lang === 'en' ? '/about' : `/${lang}/about`, label: t('nav.about') },
+    { href: lang === 'en' ? '/solutions' : `/${lang}/solutions`, label: t('nav.solutions') }
 ];
+
+// Language switcher links
+const getLocalizedPath = (targetLang: string) => {
+    const pathWithoutLang = currentPath.replace(/^\/(de|fr)/, '') || '/';
+    return targetLang === 'en' ? pathWithoutLang : `/${targetLang}${pathWithoutLang}`;
+};
 ---
 
 <nav class="nav">
     <div class="container">
         <div class="nav__content">
-            <a href="/" class="nav__logo">Care Software Labs</a>
-            <ul class="nav__menu">
-                {navItems.map(item => (
-                    <li class="nav__item">
-                        <a 
-                            href={item.href} 
-                            class={`nav__link ${currentPath === item.href ? 'nav__link--active' : ''}`}
-                        >
-                            {item.label}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+            <a href={lang === 'en' ? '/' : `/${lang}`} class="nav__logo">{t('site.title')}</a>
+            <div class="nav__right">
+                <ul class="nav__menu">
+                    {navItems.map(item => (
+                        <li class="nav__item">
+                            <a 
+                                href={item.href} 
+                                class={`nav__link ${currentPath === item.href ? 'nav__link--active' : ''}`}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+                <div class="nav__language">
+                    <select class="language-picker" onchange="window.location.href = this.value">
+                        <option value={getLocalizedPath('en')} selected={lang === 'en'}>🇬🇧 EN</option>
+                        <option value={getLocalizedPath('de')} selected={lang === 'de'}>🇩🇪 DE</option>
+                        <option value={getLocalizedPath('fr')} selected={lang === 'fr'}>🇫🇷 FR</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -48,6 +67,12 @@ const navItems = [
         align-items: center;
         justify-content: space-between;
         padding: 1rem 0;
+    }
+
+    .nav__right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
 
     .nav__logo {
@@ -81,10 +106,36 @@ const navItems = [
         color: var(--color-primary);
     }
 
+    .language-picker {
+        background-color: var(--color-bg-primary);
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        min-width: 80px;
+        font-weight: 500;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    }
+
+    .language-picker:hover {
+        border-color: var(--color-primary);
+    }
+
+    .language-picker:focus {
+        outline: none;
+        border-color: var(--color-primary);
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
         .nav__menu {
             gap: 1.5rem;
+        }
+
+        .nav__right {
+            gap: 1rem;
         }
 
         .nav__logo {
@@ -98,8 +149,18 @@ const navItems = [
             gap: 1rem;
         }
 
+        .nav__right {
+            width: 100%;
+            justify-content: space-between;
+        }
+
         .nav__menu {
             gap: 1rem;
+        }
+
+        .language-picker {
+            min-width: 70px;
+            font-size: 0.8rem;
         }
     }
 </style>

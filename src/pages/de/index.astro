@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import { useTranslations } from '../i18n';
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n';
 
-const t = useTranslations('en');
+const t = useTranslations('de');
 ---
 
 <Layout title={`${t('site.title')} | ${t('site.description')}`}>
@@ -12,11 +12,10 @@ const t = useTranslations('en');
     <main>
         <section class="hero">
             <div class="container">
-                <!-- <h1 class="hero__title">Care Software Labs</h1> -->
                 <p class="hero__tagline">{t('hero.tagline')}</p>
                 <div class="hero__cta">
-                    <a href="/about" class="button">{t('hero.learn-more')}</a>
-                    <a href="/solutions" class="button button--secondary">{t('hero.our-solutions')}</a>
+                    <a href="/de/about" class="button">{t('hero.learn-more')}</a>
+                    <a href="/de/solutions" class="button button--secondary">{t('hero.our-solutions')}</a>
                 </div>
             </div>
         </section>
@@ -45,6 +44,7 @@ const t = useTranslations('en');
     <Footer />
 </Layout>
 
+<!-- Copy the same styles from your English index.astro -->
 <style>
     /* Layout */
     main {
