@@ -4,13 +4,13 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Products | Care Software Labs">
+<Layout title="Solutions | Care Software Labs">
     <Navigation />
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="hero__title">Our Products</h1>
+                <h1 class="hero__title">Our Solutions</h1>
                 <p class="hero__tagline">Modern solutions for modern care</p>
             </div>
         </section>
@@ -19,57 +19,62 @@ import Footer from '../components/Footer.astro';
             <div class="container">
                 <div class="content__intro">
                     <p class="intro__text">
-                        We're building a suite of modular software solutions designed to work together 
-                        seamlessly, giving care organizations the flexibility to choose what they need 
-                        and expand over time.
+                        We're building modular software solutions for two critical care sectors: 
+                        healthcare organizations and social services, each designed to address 
+                        their unique needs and challenges.
                     </p>
                 </div>
 
-                <div class="products">
-                    <div class="product__card product__card--featured">
-                        <div class="product__header">
-                            <h2 class="product__title">CareOS Platform</h2>
-                            <span class="product__status">Coming Soon</span>
+                <!-- Healthcare Solutions -->
+                <div class="solutions-section">
+                    <h2 class="section__title">Healthcare Solutions</h2>
+                    <div class="products">
+                        <div class="product__card product__card--featured">
+                            <div class="product__header">
+                                <h3 class="product__title">CareOS Platform</h3>
+                                <span class="product__status">Coming Soon</span>
+                            </div>
+                            <p class="product__description">
+                                Our flagship modular care management platform. Built to integrate seamlessly 
+                                with existing systems while providing modern, intuitive workflows for care teams.
+                            </p>
+                            <ul class="product__features">
+                                <li>Modular architecture that grows with your needs</li>
+                                <li>AI-ready infrastructure for future capabilities</li>
+                                <li>Seamless integration with existing systems</li>
+                                <li>Intuitive user experience designed for care teams</li>
+                            </ul>
                         </div>
-                        <p class="product__description">
-                            Our flagship modular care management platform. Built to integrate seamlessly 
-                            with existing systems while providing modern, intuitive workflows for care teams.
-                        </p>
-                        <ul class="product__features">
-                            <li>Modular architecture that grows with your needs</li>
-                            <li>AI-ready infrastructure for future capabilities</li>
-                            <li>Seamless integration with existing systems</li>
-                            <li>Intuitive user experience designed for care teams</li>
-                        </ul>
                     </div>
+                </div>
 
-                    <div class="product__card">
-                        <div class="product__header">
-                            <h3 class="product__title">Care Analytics</h3>
-                            <span class="product__status">In Development</span>
+                <!-- Social Services Solutions -->
+                <div class="solutions-section">
+                    <h2 class="section__title">Social Services Solutions</h2>
+                    <div class="products">
+                        <div class="product__card">
+                            <div class="product__header">
+                                <h3 class="product__title">SozialCare Platform</h3>
+                                <span class="product__status">In Development</span>
+                            </div>
+                            <p class="product__description">
+                                Case management application for school social workers. Currently piloting 
+                                with a private school in Würzburg, Germany.
+                            </p>
+                            <ul class="product__features">
+                                <li>Comprehensive case management with CRUD operations</li>
+                                <li>Privacy-compliant data handling and protection</li>
+                                <li>Documentation system for visits and follow-ups</li>
+                                <li>Customizable for local compliance requirements</li>
+                            </ul>
                         </div>
-                        <p class="product__description">
-                            Transform your care data into actionable insights with our analytics module, 
-                            designed specifically for healthcare organizations.
-                        </p>
-                    </div>
-
-                    <div class="product__card">
-                        <div class="product__header">
-                            <h3 class="product__title">Workflow Automation</h3>
-                            <span class="product__status">Planned</span>
-                        </div>
-                        <p class="product__description">
-                            Reduce administrative burden with intelligent automation that handles 
-                            routine tasks while keeping humans in control of care decisions.
-                        </p>
                     </div>
                 </div>
 
                 <div class="cta">
                     <h2 class="cta__title">Interested in learning more?</h2>
                     <p class="cta__text">
-                        We're currently working with select partners to develop our platform. 
+                        We're currently working with select partners to develop our platforms. 
                         Get in touch to discuss how we can help transform your care operations.
                     </p>
                     <div class="cta__actions">
@@ -139,12 +144,28 @@ import Footer from '../components/Footer.astro';
         margin: 0 auto;
     }
 
+    /* Solutions Sections */
+    .solutions-section {
+        margin-bottom: 4rem;
+    }
+
+    .solutions-section:last-of-type {
+        margin-bottom: 5rem;
+    }
+
+    .section__title {
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: var(--color-primary);
+        margin: 0 0 2rem 0;
+        text-align: center;
+    }
+
     /* Products */
     .products {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        margin-bottom: 5rem;
     }
 
     .product__card {
@@ -261,7 +282,11 @@ import Footer from '../components/Footer.astro';
             margin-bottom: 3rem;
         }
 
-        .products {
+        .solutions-section {
+            margin-bottom: 3rem;
+        }
+
+        .solutions-section:last-of-type {
             margin-bottom: 4rem;
         }
 
