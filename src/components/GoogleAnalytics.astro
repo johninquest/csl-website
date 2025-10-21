@@ -1,0 +1,21 @@
+---
+// src/components/GoogleAnalytics.astro
+---
+
+<!-- Google tag (gtag.js) -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}></script>
+<script define:vars={{ measurementId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', measurementId, {
+    // Privacy-friendly settings
+    anonymize_ip: true,
+    cookie_flags: 'SameSite=None;Secure',
+    // Custom settings
+    page_title: document.title,
+    page_location: window.location.href,
+    content_group1: document.documentElement.lang, // Track language
+  });
+</script>

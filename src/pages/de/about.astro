@@ -2,12 +2,14 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+import PageTracker from '../../components/PageTracker.astro';
 import { useTranslations } from '../../i18n';
 
 const t = useTranslations('de');
 ---
 
 <Layout title={`${t('about.title')} | ${t('site.title')}`}>
+    <PageTracker pageName="about" pageCategory="info" />
     <Navigation />
 
     <main>

@@ -1,6 +1,9 @@
 ---
 import '../styles/theme.css';
 import { getLangFromUrl } from '../i18n';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import AnalyticsTracker from '../components/AnalyticsTracker.astro';
 
 interface Props {
     title: string;
@@ -22,9 +25,14 @@ const lang = getLangFromUrl(Astro.url);
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        
+        <!-- Google Analytics -->
+        <GoogleAnalytics />
     </head>
     <body>
         <slot />
+        <CookieConsent />
+        <AnalyticsTracker />
     </body>
 </html>
 

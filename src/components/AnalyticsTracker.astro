@@ -1,0 +1,77 @@
+---
+// src/components/AnalyticsTracker.astro
+---
+
+<script>
+import { trackButtonClick, trackNavigationClick, trackLanguageChange, trackEmailClick, trackSocialClick, trackEvent } from '../lib/analytics.ts';
+
+// Track button clicks
+document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    
+    // Track CTA button clicks
+    if (target.classList.contains('button')) {
+        const buttonText = target.textContent?.trim() || '';
+        const href = target.getAttribute('href') || '';
+        trackButtonClick(buttonText, href);
+    }
+    
+    // Track navigation clicks
+    if (target.classList.contains('nav__link')) {
+        const linkText = target.textContent?.trim() || '';
+        const href = target.getAttribute('href') || '';
+        trackNavigationClick(linkText, href);
+    }
+    
+    // Track email link clicks
+    const href = target.getAttribute('href');
+    if (href && href.startsWith('mailto:')) {
+        const email = href.replace('mailto:', '');
+        trackEmailClick(email);
+    }
+    
+    // Track social media clicks
+    if (target.closest('a[href*="linkedin.com"]')) {
+        trackSocialClick('linkedin');
+    }
+});
+
+// Track language switching
+document.addEventListener('change', (event) => {
+    const target = event.target as HTMLElement;
+    
+    if (target.classList.contains('language-picker')) {
+        const select = target as HTMLSelectElement;
+        const currentLang = document.documentElement.lang;
+        const newPath = select.value;
+        
+        // Extract new language from path
+        let newLang = 'en';
+        if (newPath.startsWith('/de')) newLang = 'de';
+        else if (newPath.startsWith('/fr')) newLang = 'fr';
+        
+        trackLanguageChange(currentLang, newLang);
+    }
+});
+
+// Track scroll depth
+let maxScrollDepth = 0;
+document.addEventListener('scroll', () => {
+    const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    
+    if (scrollDepth > maxScrollDepth) {
+        maxScrollDepth = scrollDepth;
+        
+        // Track scroll milestones
+        if (scrollDepth >= 25 && maxScrollDepth < 25) {
+            trackEvent('scroll_depth', { depth: '25%' });
+        } else if (scrollDepth >= 50 && maxScrollDepth < 50) {
+            trackEvent('scroll_depth', { depth: '50%' });
+        } else if (scrollDepth >= 75 && maxScrollDepth < 75) {
+            trackEvent('scroll_depth', { depth: '75%' });
+        } else if (scrollDepth >= 90 && maxScrollDepth < 90) {
+            trackEvent('scroll_depth', { depth: '90%' });
+        }
+    }
+});
+</script>

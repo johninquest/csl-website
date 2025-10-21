@@ -1,7 +1,7 @@
 {
   "name": "csl-website",
   "type": "module",
-  "version": "0.10.17",
+  "version": "0.10.21",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
