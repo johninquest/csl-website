@@ -3,20 +3,17 @@ import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import PageTracker from '../../components/PageTracker.astro';
-import { useTranslations } from '../../i18n';
-
-const t = useTranslations('de');
 ---
 
-<Layout title={`${t('solutions.title')} | ${t('site.title')}`}>
+<Layout title="Unsere Lösungen | Care Software Labs">
     <PageTracker pageName="solutions" pageCategory="product" />
     <Navigation />
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="hero__title">{t('solutions.title')}</h1>
-                <p class="hero__tagline">{t('solutions.tagline')}</p>
+                <h1 class="hero__title">Unsere Lösungen</h1>
+                <p class="hero__tagline">Fallmanagement für soziale Dienste</p>
             </div>
         </section>
 
@@ -24,61 +21,47 @@ const t = useTranslations('de');
             <div class="container">
                 <div class="content__intro">
                     <p class="intro__text">
-                        {t('solutions.intro')}
+                        Wir entwickeln modulare Fallmanagement-Software speziell für Schulsozialarbeit 
+                        und soziale Dienste.
                     </p>
                 </div>
 
-                <!-- Healthcare Solutions -->
+                <!-- School Social Work Solutions -->
                 <div class="solutions-section">
-                    <h2 class="section__title">{t('solutions.healthcare.title')}</h2>
+                    <h2 class="section__title">Schulsozialarbeit</h2>
                     <div class="products">
                         <div class="product__card product__card--featured">
                             <div class="product__header">
-                                <h3 class="product__title">{t('solutions.careos.title')}</h3>
-                                <span class="product__status">{t('solutions.careos.status')}</span>
+                                <h3 class="product__title">SozialCare Plattform</h3>
+                                <span class="product__status">Pilot</span>
                             </div>
                             <p class="product__description">
-                                {t('solutions.careos.description')}
+                                Digitales Fallmanagement ersetzt papierbasierte Arbeitsabläufe. Derzeit im Pilot 
+                                mit einer Privatschule aus der Region, mit Fokus auf Zeiteinsparungen und Datenschutz-Bereitschaft.
                             </p>
                             <ul class="product__features">
-                                <li>{t('solutions.careos.feature1')}</li>
-                                <li>{t('solutions.careos.feature2')}</li>
-                                <li>{t('solutions.careos.feature3')}</li>
-                                <li>{t('solutions.careos.feature4')}</li>
+                                <li>Fälle und Termine einfach verwalten</li>
+                                <li>Echtzeit-Übersichten für die Leitung</li>
+                                <li>DSGVO-konform by design</li>
+                                <li>Berichte schnell erstellen</li>
+                                <li>Vollständiger Desktop- und Mobilzugriff</li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Social Services Solutions -->
-                <div class="solutions-section">
-                    <h2 class="section__title">{t('solutions.social.title')}</h2>
-                    <div class="products">
-                        <div class="product__card">
-                            <div class="product__header">
-                                <h3 class="product__title">{t('solutions.sozialcare.title')}</h3>
-                                <span class="product__status">{t('solutions.sozialcare.status')}</span>
+                            <div class="product__actions">
+                                <a href="/de/solutions/sozialcare" class="button button--primary">Mehr erfahren</a>
+                                <a href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Pilotprogramm" class="button button--secondary">Am Pilot teilnehmen</a>
                             </div>
-                            <p class="product__description">
-                                {t('solutions.sozialcare.description')}
-                            </p>
-                            <ul class="product__features">
-                                <li>{t('solutions.sozialcare.feature1')}</li>
-                                <li>{t('solutions.sozialcare.feature2')}</li>
-                                <li>{t('solutions.sozialcare.feature3')}</li>
-                                <li>{t('solutions.sozialcare.feature4')}</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="cta">
-                    <h2 class="cta__title">{t('solutions.cta.title')}</h2>
+                    <h2 class="cta__title">Pilot-Partner gesucht</h2>
                     <p class="cta__text">
-                        {t('solutions.cta.description')}
+                        Wir suchen weitere Schulen für unser Pilotprogramm. 
+                        Helfen Sie dabei, unseren Ansatz zu validieren und erhalten Sie frühen Zugang zur Plattform.
                     </p>
                     <div class="cta__actions">
-                        <a href="mailto:hello@caresoftwarelabs.com" class="button">{t('solutions.cta.contact')}</a>
+                        <a href="mailto:hello@caresoftwarelabs.com?subject=Pilotprogramm%20Anfrage" class="button">Kontaktieren Sie uns</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +71,6 @@ const t = useTranslations('de');
     <Footer />
 </Layout>
 
-<!-- Copy the same styles from your English solutions.astro -->
 <style>
     /* Layout */
     main {
@@ -150,10 +132,6 @@ const t = useTranslations('de');
         margin-bottom: 4rem;
     }
 
-    .solutions-section:last-of-type {
-        margin-bottom: 5rem;
-    }
-
     .section__title {
         font-size: 1.75rem;
         font-weight: 400;
@@ -201,8 +179,8 @@ const t = useTranslations('de');
         font-size: 0.875rem;
         padding: 0.25rem 0.75rem;
         border-radius: 4px;
-        background-color: var(--color-accent);
-        color: var(--color-bg-primary);
+        background-color: #10b981;
+        color: white;
         font-weight: 500;
     }
 
@@ -216,7 +194,7 @@ const t = useTranslations('de');
     .product__features {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 0 0 2rem 0;
     }
 
     .product__features li {
@@ -239,12 +217,24 @@ const t = useTranslations('de');
         margin-bottom: 0;
     }
 
+    .product__actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .button--primary {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
     /* CTA Section */
     .cta {
         text-align: center;
         padding: 3rem 2rem;
         background-color: var(--color-bg-secondary);
         border-radius: 8px;
+        margin-top: 3rem;
     }
 
     .cta__title {
@@ -287,10 +277,6 @@ const t = useTranslations('de');
             margin-bottom: 3rem;
         }
 
-        .solutions-section:last-of-type {
-            margin-bottom: 4rem;
-        }
-
         .product__card {
             padding: 1.5rem;
         }
@@ -299,6 +285,14 @@ const t = useTranslations('de');
             flex-direction: column;
             align-items: flex-start;
             gap: 0.5rem;
+        }
+
+        .product__actions {
+            flex-direction: column;
+        }
+
+        .product__actions .button {
+            width: 100%;
         }
 
         .cta {

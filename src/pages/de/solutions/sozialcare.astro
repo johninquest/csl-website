@@ -1,0 +1,266 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Footer from '../../../components/Footer.astro';
+import PageTracker from '../../../components/PageTracker.astro';
+---
+
+<Layout title="SozialCare Plattform | Care Software Labs">
+    <PageTracker pageName="sozialcare-solution" pageCategory="product-detail" />
+    <Navigation />
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">SozialCare Plattform</h1>
+                <p class="hero__tagline">Fallmanagement für die Schulsozialarbeit</p>
+                <div class="hero__status">
+                    <span class="status-badge status-badge--active">Pilot</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="overview">
+            <div class="container">
+                <div class="overview__content">
+                    <h2 class="section__title">Von Papierarbeit zu Digital</h2>
+                    <p class="overview__description">
+                        Die SozialCare Plattform löst die Kernprobleme papierbasierter Fallarbeit in Schulen. 
+                        Derzeit im Pilot mit einer Privatschule aus der Region, ermöglicht unsere Plattform 
+                        schnellere Dokumentation, Echtzeit-Sichtbarkeit und bessere Datenschutz-Bereitschaft.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="core-features">
+            <div class="container">
+                <h2 class="section__title">Kernfunktionen</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature__title">Fallmanagement</h3>
+                        <p class="feature__description">Fälle und Termine einfach verwalten mit intuitiver Oberfläche</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature__title">Echtzeit-Einblicke</h3>
+                        <p class="feature__description">Echtzeit-Übersichten für die Leitung und Entscheidungsfindung</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature__title">Datenschutz</h3>
+                        <p class="feature__description">DSGVO-konform by design mit integrierten Datenschutzkontrollen</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature__title">Einfache Berichte</h3>
+                        <p class="feature__description">Berichte schnell erstellen für Compliance und Einblicke</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature__title">Mobil bereit</h3>
+                        <p class="feature__description">Vollständiger Desktop- und Mobilzugriff für Arbeit überall</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">Unserem Pilotprogramm beitreten</h2>
+                    <p class="cta__description">
+                        Wir suchen weitere Schulen für unser Pilotprogramm. 
+                        Erhalten Sie frühen Zugang und helfen Sie bei der Plattformentwicklung.
+                    </p>
+                    <div class="cta__actions">
+                        <a href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Pilotprogramm" class="button button--primary">
+                            Pilot-Zugang anfordern
+                        </a>
+                        <a href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Demo" class="button button--secondary">
+                            Demo vereinbaren
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <Footer />
+</Layout>
+
+<style>
+    /* Layout */
+    main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-bg-primary);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 8rem 0 6rem 0;
+        text-align: center;
+        background-color: var(--color-bg-primary);
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 300;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+        letter-spacing: -0.02em;
+    }
+
+    .hero__tagline {
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        color: var(--color-text-secondary);
+        font-weight: 400;
+        margin: 0 0 2rem 0;
+    }
+
+    .hero__status {
+        display: flex;
+        justify-content: center;
+    }
+
+    .status-badge {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 500;
+        background-color: #10b981;
+        color: white;
+    }
+
+    /* Overview Section */
+    .overview {
+        padding: 4rem 0;
+        background-color: var(--color-bg-secondary);
+    }
+
+    .overview__content {
+        text-align: center;
+    }
+
+    .section__title {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        font-weight: 400;
+        color: var(--color-primary);
+        margin: 0 0 2rem 0;
+        text-align: center;
+    }
+
+    .overview__description {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Core Features */
+    .core-features {
+        padding: 6rem 0;
+        background-color: var(--color-bg-primary);
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .feature-card {
+        background-color: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .feature__title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+    }
+
+    .feature__description {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* CTA Section */
+    .cta {
+        padding: 6rem 0;
+        background-color: var(--color-bg-secondary);
+    }
+
+    .cta__content {
+        text-align: center;
+    }
+
+    .cta__title {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        font-weight: 400;
+        color: var(--color-primary);
+        margin: 0 0 1.5rem 0;
+    }
+
+    .cta__description {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: var(--color-text-secondary);
+        max-width: 600px;
+        margin: 0 auto 2.5rem auto;
+    }
+
+    .cta__actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .button--primary {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero {
+            padding: 6rem 0 4rem 0;
+        }
+
+        .core-features, .cta {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+        }
+
+        .cta__actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta__actions .button {
+            width: 100%;
+            max-width: 280px;
+        }
+    }
+</style>
