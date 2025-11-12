@@ -11,125 +11,98 @@ import PageTracker from '../../../components/PageTracker.astro';
 
     <main>
         <section class="hero">
-            <div class="container">
-                <h1 class="hero__title">SozialCare Plattform</h1>
-                <p class="hero__tagline">Fallmanagement für die Schulsozialarbeit</p>
-                <div class="hero__status">
-                    <span class="status-badge status-badge--active">Pilot</span>
-                </div>
-            </div>
+            <h1>SozialCare Plattform</h1>
+            <p>Fallmanagement für die Schulsozialarbeit</p>
+            <span class="status-badge">Pilot</span>
         </section>
 
-        <section class="overview">
-            <div class="container">
-                <div class="overview__content">
-                    <h2 class="section__title">Von Papierarbeit zu Digital</h2>
-                    <p class="overview__description">
-                        Die SozialCare Plattform löst die Kernprobleme papierbasierter Fallarbeit in Schulen. 
-                        Derzeit im Pilot mit einer Privatschule aus der Region, ermöglicht unsere Plattform 
-                        schnellere Dokumentation, Echtzeit-Sichtbarkeit und bessere Datenschutz-Bereitschaft.
-                    </p>
-                </div>
-            </div>
+        <section>
+            <h2>Kernfunktionen</h2>
+            <ul class="bullets">
+                <li>Fälle und Termine einfach verwalten</li>
+                <li>Echtzeit-Übersichten für die Leitung</li>
+                <li>DSGVO-konform by design</li>
+                <li>Berichte schnell erstellen</li>
+                <li>Vollständiger Desktop- und Mobilzugriff</li>
+            </ul>
         </section>
 
-        <section class="core-features">
-            <div class="container">
-                <h2 class="section__title">Kernfunktionen</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3 class="feature__title">Fallmanagement</h3>
-                        <p class="feature__description">Fälle und Termine einfach verwalten mit intuitiver Oberfläche</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature__title">Echtzeit-Einblicke</h3>
-                        <p class="feature__description">Echtzeit-Übersichten für die Leitung und Entscheidungsfindung</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature__title">Datenschutz</h3>
-                        <p class="feature__description">DSGVO-konform by design mit integrierten Datenschutzkontrollen</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature__title">Einfache Berichte</h3>
-                        <p class="feature__description">Berichte schnell erstellen für Compliance und Einblicke</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature__title">Mobil bereit</h3>
-                        <p class="feature__description">Vollständiger Desktop- und Mobilzugriff für Arbeit überall</p>
-                    </div>
-                </div>
-            </div>
+        <section>
+            <h2>Für wen?</h2>
+            <ul class="bullets">
+                <li>Schulsozialarbeit: Einfache, strukturierte Fallbearbeitung. Weniger Aufwand für Protokolle, Berichte und Statistiken.</li>
+                <li>Schulleitung: Schneller Überblick über Fälle, Trends und offene Aufgaben. Entlastet die Schulsozialarbeit und beschleunigt Entscheidungen.</li>
+                <li>Behörden: Klare, einheitliche Unterlagen. Relevante Entwicklungen früh und übersichtlich verfügbar.</li>
+            </ul>
         </section>
 
         <section class="platform-preview">
-            <div class="container">
-                <h2 class="section__title">Plattform-Vorschau</h2>
-                <p class="preview-subtitle">Klicken Sie auf ein Bild für eine detaillierte Ansicht</p>
-                <div class="preview-gallery">
-                    <div class="preview-item">
-                        <div class="preview-image-container" 
-                             data-image="/images/sozialcare-dashboard.png" 
-                             data-caption="Dashboard mit Echtzeit-Einblicken und Statistiken">
-                            <img src="/images/sozialcare-dashboard.png" alt="SozialCare Dashboard mit Echtzeit-Übersicht und Statistiken" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                            <div class="preview-placeholder">
-                                <div class="placeholder-icon">📊</div>
-                                <p>Dashboard</p>
-                                <small>Echtzeit-Übersicht</small>
-                            </div>
-                            <div class="preview-overlay">
-                                <div class="zoom-icon expand-icon"></div>
-                            </div>
+            <h2>Plattform-Einblicke</h2>
+            <p class="preview-subtitle">Klicken Sie auf ein Bild für eine detaillierte Ansicht</p>
+            <div class="preview-gallery">
+                <div class="preview-item">
+                    <div class="preview-image-container" 
+                         data-image="/images/sozialcare-dashboard.png" 
+                         data-caption="Dashboard mit Echtzeit-Einblicken und Statistiken">
+                        <img src="/images/sozialcare-dashboard.png" alt="SozialCare Dashboard mit Echtzeit-Übersicht und Statistiken" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="preview-placeholder">
+                            <div class="placeholder-icon">📊</div>
+                            <p>Dashboard</p>
+                            <small>Echtzeit-Übersicht</small>
                         </div>
-                        <p class="preview-caption">Dashboard mit Echtzeit-Einblicken und Statistiken</p>
-                    </div>
-                    <div class="preview-item">
-                        <div class="preview-image-container" 
-                             data-image="/images/sozialcare-case-list.png" 
-                             data-caption="Vollständige Fallliste mit Filter- und Sortierfunktionen">
-                            <img src="/images/sozialcare-case-list.png" alt="Falllistenansicht mit allen aktiven Fällen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                            <div class="preview-placeholder">
-                                <div class="placeholder-icon">📋</div>
-                                <p>Fallliste</p>
-                                <small>Alle Fälle im Überblick</small>
-                            </div>
-                            <div class="preview-overlay">
-                                <div class="zoom-icon expand-icon"></div>
-                            </div>
+                        <div class="preview-overlay">
+                            <div class="zoom-icon expand-icon"></div>
                         </div>
-                        <p class="preview-caption">Vollständige Fallliste mit Filter- und Sortierfunktionen</p>
                     </div>
-                    <div class="preview-item">
-                        <div class="preview-image-container" 
-                             data-image="/images/sozialcare-case-details.png" 
-                             data-caption="Detaillierte Fallinformationen und Dokumentation">
-                            <img src="/images/sozialcare-case-details.png" alt="Einzelne Falldetailansicht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                            <div class="preview-placeholder">
-                                <div class="placeholder-icon">👤</div>
-                                <p>Falldetails</p>
-                                <small>Einzelfallansicht</small>
-                            </div>
-                            <div class="preview-overlay">
-                                <div class="zoom-icon expand-icon"></div>
-                            </div>
+                    <p class="preview-caption">Dashboard mit Echtzeit-Einblicken und Statistiken</p>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image-container" 
+                         data-image="/images/sozialcare-case-list.png" 
+                         data-caption="Vollständige Fallliste mit Filter- und Sortierfunktionen">
+                        <img src="/images/sozialcare-case-list.png" alt="Falllistenansicht mit allen aktiven Fällen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="preview-placeholder">
+                            <div class="placeholder-icon">📋</div>
+                            <p>Fallliste</p>
+                            <small>Alle Fälle im Überblick</small>
                         </div>
-                        <p class="preview-caption">Detaillierte Fallinformationen und Dokumentation</p>
-                    </div>
-                    <div class="preview-item">
-                        <div class="preview-image-container" 
-                             data-image="/images/sozialcare-follow-ups.png" 
-                             data-caption="Nachgespräche erfassen und Folgetermine erfassen und verwalten">
-                            <img src="/images/sozialcare-follow-ups.png" alt="Nachgespräche und Folgetermine erfassen und verwalten" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                            <div class="preview-placeholder">
-                                <div class="placeholder-icon">🔄</div>
-                                <p>Nachgespräche</p>
-                                <small>Termine erfassen</small>
-                            </div>
-                            <div class="preview-overlay">
-                               <div class="zoom-icon expand-icon"></div>
-                            </div>
+                        <div class="preview-overlay">
+                            <div class="zoom-icon expand-icon"></div>
                         </div>
-                        <p class="preview-caption">Nachgespräche erfassen und Folgetermine erfassen und verwalten</p>
                     </div>
+                    <p class="preview-caption">Vollständige Fallliste mit Filter- und Sortierfunktionen</p>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image-container" 
+                         data-image="/images/sozialcare-case-details.png" 
+                         data-caption="Detaillierte Fallinformationen und Dokumentation">
+                        <img src="/images/sozialcare-case-details.png" alt="Einzelne Falldetailansicht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="preview-placeholder">
+                            <div class="placeholder-icon">👤</div>
+                            <p>Falldetails</p>
+                            <small>Einzelfallansicht</small>
+                        </div>
+                        <div class="preview-overlay">
+                            <div class="zoom-icon expand-icon"></div>
+                        </div>
+                    </div>
+                    <p class="preview-caption">Detaillierte Fallinformationen und Dokumentation</p>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image-container" 
+                         data-image="/images/sozialcare-follow-ups.png" 
+                         data-caption="Nachgespräche erfassen und Folgetermine erfassen und verwalten">
+                        <img src="/images/sozialcare-follow-ups.png" alt="Nachgespräche und Folgetermine erfassen und verwalten" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="preview-placeholder">
+                            <div class="placeholder-icon">🔄</div>
+                            <p>Nachgespräche</p>
+                            <small>Termine erfassen</small>
+                        </div>
+                        <div class="preview-overlay">
+                            <div class="zoom-icon expand-icon"></div>
+                        </div>
+                    </div>
+                    <p class="preview-caption">Nachgespräche erfassen und Folgetermine erfassen und verwalten</p>
                 </div>
             </div>
         </section>
@@ -143,24 +116,18 @@ import PageTracker from '../../../components/PageTracker.astro';
             </div>
         </div>
 
+        <section>
+            <h2>Datenschutz & Vertrauen</h2>
+            <ul class="bullets">
+                <li>DSGVO-konform by design mit Datenminimierung</li>
+                <li>Rollenbasierte Zugangskontrollen</li>
+                <li>Deutsche/EU-Hosting und Verschlüsselung</li>
+            </ul>
+        </section>
+
         <section class="cta">
-            <div class="container">
-                <div class="cta__content">
-                    <h2 class="cta__title">Unserem Pilotprogramm beitreten</h2>
-                    <p class="cta__description">
-                        Wir suchen weitere Schulen für unser Pilotprogramm. 
-                        Erhalten Sie frühen Zugang und helfen Sie bei der Plattformentwicklung.
-                    </p>
-                    <div class="cta__actions">
-                        <a href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Pilotprogramm" class="button button--primary">
-                            Pilot-Zugang anfordern
-                        </a>
-                        <a href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Demo" class="button button--secondary">
-                            Demo vereinbaren
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <a class="button button--primary" href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Pilotprogramm">Pilot-Zugang anfordern</a>
+            <a class="button button--secondary" href="mailto:hello@caresoftwarelabs.com?subject=SozialCare%20Demo">Demo vereinbaren</a>
         </section>
     </main>
     
@@ -169,19 +136,16 @@ import PageTracker from '../../../components/PageTracker.astro';
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Get all preview containers
         const previewContainers = document.querySelectorAll('.preview-image-container');
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage') as HTMLImageElement;
         const modalCaption = document.getElementById('modalCaption');
         const closeBtn = document.querySelector('.modal-close');
 
-        // Add click event to each preview container
         previewContainers.forEach(function(container) {
             container.addEventListener('click', function(this: HTMLElement) {
                 const imageSrc = this.getAttribute('data-image');
                 const caption = this.getAttribute('data-caption');
-                
                 if (modal && modalImg && modalCaption && imageSrc) {
                     modal.style.display = 'block';
                     modalImg.src = imageSrc;
@@ -192,79 +156,55 @@ import PageTracker from '../../../components/PageTracker.astro';
             });
         });
 
-        // Close modal when clicking the X
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function() {
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
+        if (closeBtn) closeBtn.addEventListener('click', function() {
+            if (modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+        });
 
-        // Close modal when clicking outside the image
-        if (modal) {
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
+        if (modal) modal.addEventListener('click', function(e) {
+            if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+        });
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && modal && modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                modal.style.display = 'none'; document.body.style.overflow = 'auto';
             }
         });
     });
 </script>
 
 <style>
-    /* Layout */
-    main {
+    main { 
+        max-width: 800px; 
+        margin: 0 auto; 
+        padding: 2rem 1rem; 
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         background-color: var(--color-bg-primary);
     }
 
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-    }
-
-    /* Hero Section */
     .hero {
-        padding: 8rem 0 6rem 0;
         text-align: center;
-        background-color: var(--color-bg-primary);
+        padding: 4rem 0 3rem 0;
     }
 
-    .hero__title {
+    h1 { 
         font-size: clamp(2.5rem, 5vw, 3.5rem);
-        font-weight: 300;
+        font-weight: 300; 
         color: var(--color-primary);
         margin: 0 0 1rem 0;
         letter-spacing: -0.02em;
     }
 
-    .hero__tagline {
+    .hero p { 
         font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-        color: var(--color-text-secondary);
+        color: var(--color-text-secondary); 
+        margin: 0 0 1.5rem 0; 
         font-weight: 400;
-        margin: 0 0 2rem 0;
-    }
-
-    .hero__status {
-        display: flex;
-        justify-content: center;
     }
 
     .status-badge {
+        display: inline-block;
         font-size: 0.875rem;
         padding: 0.5rem 1rem;
         border-radius: 20px;
@@ -273,71 +213,43 @@ import PageTracker from '../../../components/PageTracker.astro';
         color: white;
     }
 
-    /* Overview Section */
-    .overview {
-        padding: 4rem 0;
-        background-color: var(--color-bg-secondary);
-    }
-
-    .overview__content {
-        text-align: center;
-    }
-
-    .section__title {
-        font-size: clamp(1.75rem, 3vw, 2.25rem);
+    h2 { 
+        font-size: clamp(1.5rem, 3vw, 2rem);
         font-weight: 400;
         color: var(--color-primary);
-        margin: 0 0 2rem 0;
+        margin: 3rem 0 1.5rem 0; 
         text-align: center;
     }
 
-    .overview__description {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: var(--color-text-secondary);
+    .bullets { 
+        margin: 0 0 2rem 0; 
+        padding-left: 0; 
+        color: var(--color-text-secondary); 
+        line-height: 1.7;
+        list-style: none;
         max-width: 700px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Core Features */
-    .core-features {
-        padding: 6rem 0;
-        background-color: var(--color-bg-primary);
-    }
-
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .feature-card {
-        background-color: var(--color-bg-secondary);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        padding: 2rem;
-        text-align: center;
-    }
-
-    .feature__title {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: var(--color-primary);
-        margin: 0 0 1rem 0;
-    }
-
-    .feature__description {
+    .bullets li { 
+        margin: 0.75rem 0; 
+        padding-left: 1.5rem;
+        position: relative;
         font-size: 1rem;
-        color: var(--color-text-secondary);
-        line-height: 1.6;
-        margin: 0;
+    }
+
+    .bullets li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+        font-weight: bold;
     }
 
     /* Platform Preview */
     .platform-preview {
-        padding: 6rem 0;
-        background-color: var(--color-bg-secondary);
+        margin: 3rem 0;
     }
 
     .preview-subtitle {
@@ -353,10 +265,13 @@ import PageTracker from '../../../components/PageTracker.astro';
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
         margin-top: 3rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .preview-item {
-        background-color: var(--color-bg-primary);
+        background-color: var(--color-bg-secondary);
         border: 1px solid var(--color-border);
         border-radius: 12px;
         padding: 1.5rem;
@@ -414,12 +329,11 @@ import PageTracker from '../../../components/PageTracker.astro';
         transform: scale(1.1);
     }
 
-    /* If using the expand-icon option */
     .expand-icon {
         position: relative;
         width: 24px;
         height: 24px;
-        font-size: 0; /* Hide any text */
+        font-size: 0;
     }
 
     .expand-icon::before,
@@ -563,36 +477,25 @@ import PageTracker from '../../../components/PageTracker.astro';
         max-width: 600px;
     }
 
-    /* CTA Section */
-    .cta {
-        padding: 6rem 0;
-        background-color: var(--color-bg-secondary);
-    }
-
-    .cta__content {
-        text-align: center;
-    }
-
-    .cta__title {
-        font-size: clamp(1.75rem, 3vw, 2.25rem);
-        font-weight: 400;
-        color: var(--color-primary);
-        margin: 0 0 1.5rem 0;
-    }
-
-    .cta__description {
-        font-size: 1.125rem;
-        line-height: 1.7;
-        color: var(--color-text-secondary);
-        max-width: 600px;
-        margin: 0 auto 2.5rem auto;
-    }
-
-    .cta__actions {
-        display: flex;
-        gap: 1rem;
+    .cta { 
+        display: flex; 
+        gap: 1rem; 
+        margin: 4rem 0 2rem 0; 
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
     }
 
     .button--primary {
@@ -600,33 +503,28 @@ import PageTracker from '../../../components/PageTracker.astro';
         color: white;
     }
 
+    .button--primary:hover {
+        background-color: var(--color-primary-hover);
+    }
+
+    .button--secondary {
+        background-color: var(--color-bg-secondary);
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-border);
+    }
+
+    .button--secondary:hover {
+        background-color: var(--color-accent);
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
+        main {
+            padding: 1.5rem 1rem;
+        }
+
         .hero {
-            padding: 6rem 0 4rem 0;
-        }
-
-        .core-features, .cta {
-            padding: 4rem 0;
-        }
-
-        .features-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .feature-card {
-            padding: 1.5rem;
-        }
-
-        .cta__actions {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cta__actions .button {
-            width: 100%;
-            max-width: 280px;
+            padding: 3rem 0 2rem 0;
         }
 
         .preview-gallery {
@@ -661,6 +559,17 @@ import PageTracker from '../../../components/PageTracker.astro';
         .zoom-icon {
             font-size: 1.5rem;
             padding: 0.75rem;
+        }
+
+        .cta {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta .button {
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
         }
     }
 </style>
