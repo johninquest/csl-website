@@ -61,6 +61,88 @@ import PageTracker from '../../../components/PageTracker.astro';
             </div>
         </section>
 
+        <section class="platform-preview">
+            <div class="container">
+                <h2 class="section__title">Plattform-Vorschau</h2>
+                <p class="preview-subtitle">Klicken Sie auf ein Bild für eine detaillierte Ansicht</p>
+                <div class="preview-gallery">
+                    <div class="preview-item">
+                        <div class="preview-image-container" 
+                             data-image="/images/sozialcare-dashboard.png" 
+                             data-caption="Dashboard mit Echtzeit-Einblicken und Statistiken">
+                            <img src="/images/sozialcare-dashboard.png" alt="SozialCare Dashboard mit Echtzeit-Übersicht und Statistiken" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="preview-placeholder">
+                                <div class="placeholder-icon">📊</div>
+                                <p>Dashboard</p>
+                                <small>Echtzeit-Übersicht</small>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="zoom-icon expand-icon"></div>
+                            </div>
+                        </div>
+                        <p class="preview-caption">Dashboard mit Echtzeit-Einblicken und Statistiken</p>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-image-container" 
+                             data-image="/images/sozialcare-case-list.png" 
+                             data-caption="Vollständige Fallliste mit Filter- und Sortierfunktionen">
+                            <img src="/images/sozialcare-case-list.png" alt="Falllistenansicht mit allen aktiven Fällen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="preview-placeholder">
+                                <div class="placeholder-icon">📋</div>
+                                <p>Fallliste</p>
+                                <small>Alle Fälle im Überblick</small>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="zoom-icon expand-icon"></div>
+                            </div>
+                        </div>
+                        <p class="preview-caption">Vollständige Fallliste mit Filter- und Sortierfunktionen</p>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-image-container" 
+                             data-image="/images/sozialcare-case-details.png" 
+                             data-caption="Detaillierte Fallinformationen und Dokumentation">
+                            <img src="/images/sozialcare-case-details.png" alt="Einzelne Falldetailansicht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="preview-placeholder">
+                                <div class="placeholder-icon">👤</div>
+                                <p>Falldetails</p>
+                                <small>Einzelfallansicht</small>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="zoom-icon expand-icon"></div>
+                            </div>
+                        </div>
+                        <p class="preview-caption">Detaillierte Fallinformationen und Dokumentation</p>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-image-container" 
+                             data-image="/images/sozialcare-follow-ups.png" 
+                             data-caption="Nachgespräche erfassen und Folgetermine erfassen und verwalten">
+                            <img src="/images/sozialcare-follow-ups.png" alt="Nachgespräche und Folgetermine erfassen und verwalten" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="preview-placeholder">
+                                <div class="placeholder-icon">🔄</div>
+                                <p>Nachgespräche</p>
+                                <small>Termine erfassen</small>
+                            </div>
+                            <div class="preview-overlay">
+                               <div class="zoom-icon expand-icon"></div>
+                            </div>
+                        </div>
+                        <p class="preview-caption">Nachgespräche erfassen und Folgetermine erfassen und verwalten</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Modal -->
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <img id="modalImage" src="" alt="" />
+                <div class="modal-caption" id="modalCaption"></div>
+            </div>
+        </div>
+
         <section class="cta">
             <div class="container">
                 <div class="cta__content">
@@ -84,6 +166,61 @@ import PageTracker from '../../../components/PageTracker.astro';
     
     <Footer />
 </Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all preview containers
+        const previewContainers = document.querySelectorAll('.preview-image-container');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage') as HTMLImageElement;
+        const modalCaption = document.getElementById('modalCaption');
+        const closeBtn = document.querySelector('.modal-close');
+
+        // Add click event to each preview container
+        previewContainers.forEach(function(container) {
+            container.addEventListener('click', function(this: HTMLElement) {
+                const imageSrc = this.getAttribute('data-image');
+                const caption = this.getAttribute('data-caption');
+                
+                if (modal && modalImg && modalCaption && imageSrc) {
+                    modal.style.display = 'block';
+                    modalImg.src = imageSrc;
+                    modalImg.alt = caption || '';
+                    modalCaption.textContent = caption || '';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal when clicking the X
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Close modal when clicking outside the image
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
 
 <style>
     /* Layout */
@@ -197,6 +334,235 @@ import PageTracker from '../../../components/PageTracker.astro';
         margin: 0;
     }
 
+    /* Platform Preview */
+    .platform-preview {
+        padding: 6rem 0;
+        background-color: var(--color-bg-secondary);
+    }
+
+    .preview-subtitle {
+        text-align: center;
+        font-size: 0.9375rem;
+        color: var(--color-text-secondary);
+        margin: -1rem 0 3rem 0;
+        font-style: italic;
+    }
+
+    .preview-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .preview-item {
+        background-color: var(--color-bg-primary);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .preview-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .preview-image-container {
+        position: relative;
+        width: 100%;
+        height: 240px;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .preview-image-container:hover .preview-overlay {
+        opacity: 1;
+    }
+
+    .preview-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .zoom-icon {
+        font-size: 2rem;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.15);
+        padding: 1rem;
+        border-radius: 50%;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .zoom-icon:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        transform: scale(1.1);
+    }
+
+    /* If using the expand-icon option */
+    .expand-icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        font-size: 0; /* Hide any text */
+    }
+
+    .expand-icon::before,
+    .expand-icon::after {
+        content: '';
+        position: absolute;
+        background-color: white;
+        border-radius: 1px;
+    }
+
+    .expand-icon::before {
+        width: 16px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .expand-icon::after {
+        width: 2px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .preview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .preview-placeholder {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+        border: 2px dashed var(--color-border);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: var(--color-text-secondary);
+    }
+
+    .placeholder-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.6;
+    }
+
+    .preview-placeholder p {
+        font-weight: 500;
+        font-size: 1.125rem;
+        margin: 0 0 0.25rem 0;
+        color: var(--color-primary);
+    }
+
+    .preview-placeholder small {
+        font-size: 0.875rem;
+        opacity: 0.7;
+        margin: 0;
+    }
+
+    .preview-caption {
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .modal-content {
+        position: relative;
+        margin: 2% auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .modal-close:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #modalImage {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-caption {
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 1.125rem;
+        max-width: 600px;
+    }
+
     /* CTA Section */
     .cta {
         padding: 6rem 0;
@@ -261,6 +627,40 @@ import PageTracker from '../../../components/PageTracker.astro';
         .cta__actions .button {
             width: 100%;
             max-width: 280px;
+        }
+
+        .preview-gallery {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .preview-item {
+            padding: 1rem;
+        }
+
+        .preview-image-container {
+            height: 200px;
+        }
+
+        .placeholder-icon {
+            font-size: 2rem;
+        }
+
+        .modal-content {
+            width: 95%;
+            margin: 5% auto;
+        }
+
+        .modal-close {
+            top: -35px;
+            font-size: 1.5rem;
+            width: 35px;
+            height: 35px;
+        }
+
+        .zoom-icon {
+            font-size: 1.5rem;
+            padding: 0.75rem;
         }
     }
 </style>
