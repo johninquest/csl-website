@@ -5,13 +5,13 @@ import Footer from '../../../components/Footer.astro';
 import PageTracker from '../../../components/PageTracker.astro';
 ---
 
-<Layout title="SozialCare Plattform | Care Software Labs">
+<Layout title="SozialCare App | Care Software Labs">
     <PageTracker pageName="sozialcare-solution" pageCategory="product-detail" />
     <Navigation />
 
     <main>
         <section class="hero">
-            <h1>SozialCare Plattform</h1>
+            <h1>SozialCare App</h1>
             <p>Fallmanagement für die Schulsozialarbeit</p>
             <span class="status-badge">Pilot</span>
         </section>
@@ -36,8 +36,8 @@ import PageTracker from '../../../components/PageTracker.astro';
             </ul>
         </section>
 
-        <section class="platform-preview">
-            <h2>Plattform-Einblicke</h2>
+        <section class="app-preview">
+            <h2>App-Einblicke</h2>
             <p class="preview-subtitle">Klicken Sie auf ein Bild für eine detaillierte Ansicht</p>
             <div class="preview-gallery">
                 <div class="preview-item">
@@ -249,6 +249,11 @@ import PageTracker from '../../../components/PageTracker.astro';
 
     /* Platform Preview */
     .platform-preview {
+        margin: 3rem 0;
+    }
+
+    /* App Preview */
+    .app-preview {
         margin: 3rem 0;
     }
 
