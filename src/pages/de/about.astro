@@ -8,56 +8,87 @@ import { useTranslations } from '../../i18n';
 const t = useTranslations('de');
 ---
 
-<Layout title={`${t('about.title')} | ${t('site.title')}`}>
+<Layout title="Über uns | Care Software Labs">
     <PageTracker pageName="about" pageCategory="info" />
     <Navigation />
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="hero__title">{t('about.title')}</h1>
-                <p class="hero__tagline">{t('about.tagline')}</p>
+                <h1 class="hero__title">Über uns</h1>
+                <p class="hero__tagline">Weniger Verwaltung. Mehr Zeit für Beratung.</p>
             </div>
         </section>
 
         <section class="content">
             <div class="container">
                 <div class="content__section">
-                    <h2 class="section__title">{t('about.story.title')}</h2>
+                    <h2 class="section__title">Unsere Geschichte</h2>
                     <p class="content__description">
-                        {t('about.story.p1')}
+                        Care Software Labs ist ein kleines Technologie‑Labor. Wir helfen Pflege‑ und Sozialdienstleistern, administrativen Aufwand zu senken und die Fallarbeit übersichtlich zu organisieren. Software soll unterstützen, nicht aufhalten.
                     </p>
-                    <p class="content__description">
-                        {t('about.story.p2')}
-                    </p>
+                    <!-- <p class="content__description">
+                        Wir verbinden Praxis aus Schulsozialarbeit und sozialer Arbeit mit moderner Entwicklung – mit Fokus auf Tools, die im Alltag wirklich genutzt werden.
+                    </p> -->
                 </div>
 
                 <div class="content__section">
-                    <h2 class="section__title">{t('about.mission.title')}</h2>
+                    <h2 class="section__title">Was wir machen</h2>
                     <p class="content__description">
-                        {t('about.mission.description')}
+                        Unsere Apps sparen Zeit bei Protokollen, Berichten und Auswertungen und schaffen klare Übersicht über Fälle, Termine und Zuständigkeiten – DSGVO‑konform und einfach bedienbar.
                     </p>
                 </div>
 
+                <!-- New: tangible value section -->
                 <div class="content__section">
-                    <h2 class="section__title">{t('about.approach.title')}</h2>
+                    <h2 class="section__title">Konkreter Nutzen</h2>
+                    <div class="benefits__grid">
+                        <div class="benefit-card">
+                            <h3 class="approach__title">Effizienz</h3>
+                            <p class="approach__text">
+                                Weniger Aufwand für Dokumentation, Berichte und Auswertungen.
+                            </p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="approach__title">Transparenz</h3>
+                            <p class="approach__text">
+                                Echtzeit‑Überblick über Fälle, Trends und Auslastung – für sichere Entscheidungen.
+                            </p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="approach__title">Mehr Zeit für Beratung</h3>
+                            <p class="approach__text">
+                                Klare Vorlagen und einfache Abläufe reduzieren Nacharbeit und geben Zeit für die direkte Arbeit mit Schüler:innen.
+                            </p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="approach__title">Verlässliche Berichte</h3>
+                            <p class="approach__text">
+                                Einheitliche, prüffertige Unterlagen für Schulleitung und Behörden – schnell erstellt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__section">
+                    <h2 class="section__title">Unser Ansatz</h2>
                     <div class="approach__grid">
                         <div class="approach__card">
-                            <h3 class="approach__title">{t('about.approach.modular.title')}</h3>
+                            <h3 class="approach__title">Modular aufgebaut</h3>
                             <p class="approach__text">
-                                {t('about.approach.modular.description')}
+                                Schlank starten, bei Bedarf erweitern – ohne Systemsprung oder lange Umstellungen.
                             </p>
                         </div>
                         <div class="approach__card">
-                            <h3 class="approach__title">{t('about.approach.ai.title')}</h3>
+                            <h3 class="approach__title">Einfach im Alltag</h3>
                             <p class="approach__text">
-                                {t('about.approach.ai.description')}
+                                Klare Oberflächen, sinnvolle Standards, kurze Einarbeitung – damit Dokumentation nicht bremst.
                             </p>
                         </div>
                         <div class="approach__card">
-                            <h3 class="approach__title">{t('about.approach.human.title')}</h3>
+                            <h3 class="approach__title">Praxisnah</h3>
                             <p class="approach__text">
-                                {t('about.approach.human.description')}
+                                Entsteht aus echten Anforderungen: bessere Übersicht, weniger Klicks, zuverlässige Erinnerungen.
                             </p>
                         </div>
                     </div>
@@ -172,6 +203,22 @@ const t = useTranslations('de');
         color: var(--color-text-secondary);
         line-height: 1.6;
         margin: 0;
+    }
+
+    /* Benefits: reuse card look for consistency */
+    .benefits__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .benefit-card {
+        background-color: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
     }
 
     /* Responsive adjustments */

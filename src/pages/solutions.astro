@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import PageTracker from '../components/PageTracker.astro';
 ---
 
-<Layout title="Solutions | Care Software Labs">
+<Layout title="Our Solutions | Care Software Labs">
     <PageTracker pageName="solutions" pageCategory="product" />
     <Navigation />
 
@@ -13,7 +13,7 @@ import PageTracker from '../components/PageTracker.astro';
         <section class="hero">
             <div class="container">
                 <h1 class="hero__title">Our Solutions</h1>
-                <p class="hero__tagline">Case management for social services</p>
+                <p class="hero__tagline">Digital case management for care and social services.</p>
             </div>
         </section>
 
@@ -21,12 +21,11 @@ import PageTracker from '../components/PageTracker.astro';
             <div class="container">
                 <div class="content__intro">
                     <p class="intro__text">
-                        We're building modular case management software specifically for school social work 
-                        and social services.
+                        We build simple digital solutions for case management in care and social services – currently focused on school social work.
                     </p>
                 </div>
 
-                <!-- Social Services Solutions -->
+                <!-- School Social Work Solutions -->
                 <div class="solutions-section">
                     <h2 class="section__title">School Social Work</h2>
                     <div class="products">
@@ -40,10 +39,10 @@ import PageTracker from '../components/PageTracker.astro';
                                 with a private school in the region, focusing on time savings and data protection readiness.
                             </p>
                             <ul class="product__features">
-                                <li>Track cases and follow-ups effortlessly</li>
-                                <li>Real-time dashboards for important insights</li>
+                                <li>Manage cases and follow-ups easily</li>
+                                <li>Real-time overviews for leadership</li>
                                 <li>GDPR-compliant by design</li>
-                                <li>Generate reports with ease</li>
+                                <li>Create reports quickly</li>
                                 <li>Full desktop and mobile access</li>
                             </ul>
                             <div class="product__actions">
@@ -58,7 +57,7 @@ import PageTracker from '../components/PageTracker.astro';
                     <h2 class="cta__title">Seeking Pilot Partners</h2>
                     <p class="cta__text">
                         We're looking for additional schools to join our pilot program. 
-                        Help validate our approach while getting early access to the platform.
+                        Help us validate our approach and get early access to the app.
                     </p>
                     <div class="cta__actions">
                         <a href="mailto:hello@caresoftwarelabs.com?subject=Pilot%20Program%20Inquiry" class="button">Contact Us</a>
@@ -223,9 +222,36 @@ import PageTracker from '../components/PageTracker.astro';
         flex-wrap: wrap;
     }
 
+    .button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+    }
+
     .button--primary {
         background-color: var(--color-primary);
         color: white;
+    }
+
+    .button--primary:hover {
+        background-color: var(--color-primary-hover);
+    }
+
+    .button--secondary {
+        background-color: var(--color-bg-secondary);
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-border);
+    }
+
+    .button--secondary:hover {
+        background-color: var(--color-accent);
     }
 
     /* CTA Section */
